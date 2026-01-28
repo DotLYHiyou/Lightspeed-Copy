@@ -1,24 +1,34 @@
 {
    "background": {
-      "scripts": [ "main.js" ]
+      "service_worker": "worker.js"
    },
    "content_scripts": [ {
       "all_frames": true,
-      "js": [ "in_page.js" ],
+      "js": [ "content.js" ],
       "matches": [ "\u003Call_urls>" ]
    } ],
+   "content_security_policy": {
+      "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+   },
    "description": "Lightspeed Filter Agent for Chrome",
+   "externally_connectable": {
+      "ids": [ "adkcpkpghahmbopkjchobieckeoaoeem", "egnmgclkeiioginamdjpnglaooajmcjm" ]
+   },
+   "host_permissions": [ "\u003Call_urls>", "http://*/*", "https://*/*" ],
    "icons": {
       "128": "icon-128.png",
       "16": "icon-16.png"
    },
    "incognito": "spanning",
-   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0TSbKFrknvfAAQToJadwSjzyXA2i51/PONO7gkOJMkJG17Jjgt+0/v94/w5Z1kbkO8ugov9+KtB7hbZxcHvWyCpa9hjKqXeMUGzPFcgp6ZPQKkvRl3aoedef1hlrKykkSx0pvlH0aPrp+KGc/pKcYga4E2M81tIg8JhHT/hUpS+NVU4ceA9Ky2RfjZpuvKAgI1duSxDYt+VdcRvwPJ8CocGYFAmbrd7u5ViwtyRD99tpCTp0wvz0TE4dfnCds5+qJT7zpx7Bp/uUk88JdJmDcWUcmpTNAoARh0Fl5XbYNHpQBzdk08m1fhXqQGBg45Qj+9ALRjdv2cUYO9UPeFCHDwIDAQAB",
-   "manifest_version": 2,
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvUV9d9zofzsgeqqdY7kRbcBvkwt3bFJRm3igUxWLgFv7M6IEkNlJ4d3aU4XaZm0J+V4zKnKl0/UNBwyQxCRX2FDEVbGedBAXd/6SflJhui8tHm/6sGeuh1or4dJIqGVylkRrkk3LEQM8HqsE43AVsDDOqOfzce67Gu3vhjvUkMxnBS5gtrG712bqhkjk59S+z+ObfzEO9FT7o6f9oX47+WeEvJLqzpP/6evFOHNnvYaMBdECpB2lprHLNaDEb+bDd+YmexWX+G45xqpu3lkWqImi/gL4bwgpk7WlSqI9KxMFyfuNiTuGw0r254VtNgz+b77F764Nt83JXoEncU0uwwIDAQAB",
+   "manifest_version": 3,
    "name": "Lightspeed Filter Agent",
    "options_page": "options.html",
-   "permissions": [ "webRequest", "\u003Call_urls>", "http://*/*", "idle", "background", "https://*/*", "tabs", "storage", "history", "webRequestBlocking", "identity", "identity.email", "management", "enterprise.deviceAttributes", "enterprise.networkingAttributes", "proxy", "bookmarks" ],
-   "update_url": "https://lsrelay-extensions-production.s3.amazonaws.com/chrome-filter/0b9527b61b380c10c8d33d080903495f2364e8f42b8609ba2bf04cdf9c8c5312/ChromeFilter.xml",
-   "version": "3.9.7.1744348405",
-   "web_accessible_resources": [ "blocked-image-search.png" ]
+   "permissions": [ "webRequest", "idle", "background", "tabs", "storage", "history", "webRequestBlocking", "identity", "identity.email", "management", "enterprise.deviceAttributes", "enterprise.networkingAttributes", "proxy", "bookmarks" ],
+   "update_url": "https://lsrelay-extensions-production.s3.amazonaws.com/chrome-filter/0b9527b61b380c10c8d33d080903495f2364e8f42b8609ba2bf04cdf9c8c5312/v3/ChromeFilter.xml",
+   "version": "4.2.4.1769155705",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "blocked.png" ]
+   } ]
 }
