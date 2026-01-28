@@ -1,4 +1,5 @@
-### THE OFFICAL LIGHTSPEED FILTER!
-## Open sourced by (Bog)[https://github.com/aukak/]. PLEASE star this repo if you use this, it'll mean a lot & credits me in some sory of way.
- 
+# THE OFFICIAL LIGHTSPEED FILTER!
 
+Open sourced by [Bog](https://github.com/aukak).
+
+Please star this repo if you use it. It means a lot and credits me in some way.
